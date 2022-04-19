@@ -2,11 +2,8 @@ public class Dice {
 
     public static void main(String[] args) {
 
-
-
-        //System.out.println((calcFPl() > calcSecPl() ? "The First player wins!" : "The Second player wins!"));
           boolean equals =  calcFPl(1) == calcSecPl();
-          System.out.println(equals ? "Equal! Again" : (calcFPl(1) > calcSecPl() ? "The First player wins!" : "The Second player wins!"));
+          System.out.println(equals ? "Equal! Again" : (calcFPl(1) > calcSecPl() ? "The First player win!" : "The Second player win!"));
 
     }
 
