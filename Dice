@@ -1,50 +1,39 @@
 public class Dice {
 
+    public static int diceFirstPl() {
+    
+        int dice1 = (int) (Math.random() * 6 + 1);
+        int dice2 = (int) (Math.random() * 6 + 1);
+        int sumDFP = dice1 + dice2;
+        System.out.println("First Player roll: " + dice1 + " and " + dice2);
+
+        return sumDFP;
+    }
+    public static int diceSecondPl() {
+        int dice1 = (int) (Math.random() * 6 + 1);
+        int dice2 = (int) (Math.random() * 6 + 1);
+        int sumDSP = dice1 + dice2;
+        System.out.println("Second Player roll: " + dice1 + " and " + dice2);
+
+        return sumDSP;
+    }
     public static void main(String[] args) {
 
-          boolean equals =  calcFPl(1) == calcSecPl();
-          System.out.println(equals ? "Equal! Again" : (calcFPl(1) > calcSecPl() ? "The First player win!" : "The Second player win!"));
+        int resultFirstPlayer = diceFirstPl();
+        int resultSecondPlayer = diceSecondPl();
+        System.out.println("\t The result of the first player is: " + resultFirstPlayer);
+        System.out.println("\t The result of the second player is " + resultSecondPlayer);
 
-    }
+        if(resultFirstPlayer > resultSecondPlayer){
+            System.out.println("\t\t First layer WIN!");
+        }
+        if(resultFirstPlayer < resultSecondPlayer){
+            System.out.println("\t\t The second player WIN!");
+        }
+        if(resultFirstPlayer == resultSecondPlayer){
+            System.out.println("\t\t Мяу! Equal! Try again!");
+        }
 
-    //calculate first player
-    public static int calcFPl(int sumFirstPlayer) {
-        int rollsFP1 = min_max(1, 6); //първи зар на първи играч
-        int a1 = rollsFP1;
-
-        int rollsFP2 = min_max(1, 6); //втори зар на първи играч
-        int b1 = rollsFP2;
-
-        sumFirstPlayer = a1 + b1;
-
-        System.out.println("The First player rolls: " + a1 + " and " + b1 + ". " + "Result is: " + sumFirstPlayer);
-        System.out.println("*");
-        return sumFirstPlayer;
-    }
-
-    //calculate Second Player
-    public static int calcSecPl() {
-
-        int rollsSP1 = min_max(1, 6); //първи зар на втори играч
-        int a2 = rollsSP1;
-
-        int rollsSP2 = min_max(1, 6); //втори зар на втори играч
-        int b2 = rollsSP2;
-
-        int sumSecondPlayer = a2 + b2;
-
-        System.out.println("The Second player rolls: " + a2 + " and " + b2 + ". " + "Result is: " + sumSecondPlayer);
-        System.out.println("-");
-        return sumSecondPlayer;
-    }
-
-    public static int min_max(int min, int max) {
-        min = 1;
-        max = 6;
-        int range = max - min + 1;
-        int random = (int) (Math.random() * range) + min;
-
-        return random;
     }
 
 }
