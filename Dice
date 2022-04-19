@@ -1,0 +1,53 @@
+public class test_zarove {
+
+    public static void main(String[] args) {
+
+
+
+        //System.out.println((calcFPl() > calcSecPl() ? "The First player wins!" : "The Second player wins!"));
+          boolean equals =  calcFPl(1) == calcSecPl();
+          System.out.println(equals ? "Equal! Again" : (calcFPl(1) > calcSecPl() ? "The First player wins!" : "The Second player wins!"));
+
+    }
+
+    //calculate first player
+    public static int calcFPl(int sumFirstPlayer) {
+        int rollsFP1 = min_max(1, 6); //първи зар на първи играч
+        int a1 = rollsFP1;
+
+        int rollsFP2 = min_max(1, 6); //втори зар на първи играч
+        int b1 = rollsFP2;
+
+        sumFirstPlayer = a1 + b1;
+
+        System.out.println("The First player rolls: " + a1 + " and " + b1 + ". " + "Result is: " + sumFirstPlayer);
+        System.out.println("*");
+        return sumFirstPlayer;
+    }
+
+    //calculate Second Player
+    public static int calcSecPl() {
+
+        int rollsSP1 = min_max(1, 6); //първи зар на втори играч
+        int a2 = rollsSP1;
+
+        int rollsSP2 = min_max(1, 6); //втори зар на втори играч
+        int b2 = rollsSP2;
+
+        int sumSecondPlayer = a2 + b2;
+
+        System.out.println("The Second player rolls: " + a2 + " and " + b2 + ". " + "Result is: " + sumSecondPlayer);
+        System.out.println("-");
+        return sumSecondPlayer;
+    }
+
+    public static int min_max(int min, int max) {
+        min = 1;
+        max = 6;
+        int range = max - min + 1;
+        int random = (int) (Math.random() * range) + min;
+
+        return random;
+    }
+
+}
