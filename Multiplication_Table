@@ -1,0 +1,71 @@
+import java.util.Scanner;
+
+public class Multiplication_Table {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a number: ");
+        int n = scanner.nextInt();
+
+        mul_table(n, 1);
+    }
+    static void mul_table(int n, int i) {
+        if (i > 10)
+            return;
+
+        System.out.println(n + " x " + i + " = " + n * i + "\t\t");
+
+        mul_table(n, i + 1);
+    }
+}
+// ============================================ ВАРИАНТ 2 =============================================
+/*
+
+ public static void main(String[] args) {
+
+        print(1);
+    }
+
+    static void print(int n) {
+
+        if (n == 0) {
+            return;
+        } else {
+            print(n - 1); // Reduced to n==1 Then start outputting
+            for (int i = n; i <= 10; i++) {
+                System.out.print("\n");
+                for (int j = n; j <= 10; j++) {
+                    System.out.print(i + " x " + j + " = " + (i * j) + "\t");
+
+                }
+            }
+        }
+        System.out.println();
+    }
+ */
+// ============================================= ВАРИАНТ 3 ==========================================================
+/*
+public static void main(String[] args) {
+
+        print(9);
+    }
+    static void printOne(int m , int n){
+        // Рекурсивно второ n във всяка колона в реда
+        if(m == 0){
+
+            return ;
+        }
+        printOne(m-1,n);
+        // Изхода на всеки ред в таблицата
+        System.out.print( m + " x " + n + " = " + m * n + "\t\t" );
+    }
+    static void print(int n){
+        // Рекурсия на ред
+        if(n==0){
+            return ;
+        }
+        print(n-1); // Редуцира до n == 1, след което започва да извежда
+        printOne(n,n);
+        System.out.println();
+    }
+ */
