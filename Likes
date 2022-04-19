@@ -1,0 +1,13 @@
+public class Likes {
+    public static void main(String[] args) {
+        int counterLikes = sumLikes(13,true,"I don`t like this my homework d-_-b");
+        System.out.println(counterLikes);
+    }
+     public static int sumLikes(int numLikes, boolean likeOrNotLike, String comments){
+        System.out.println(comments);
+        if(likeOrNotLike){
+            numLikes++;
+        }
+        return numLikes;
+    }
+}
